@@ -1,11 +1,7 @@
-import numpy as np
 import tensorflow as tf
-import numbers
 from tensorflow.python.framework import ops
-from tensorflow.python.framework import tensor_util
-from tensorflow.python.ops import random_ops
 from tensorflow.python.ops import math_ops
-from tensorflow.python.framework import tensor_shape
+from tensorflow.python.ops import random_ops
 
 
 def GenRNNMask(keep_prob=1.0, is_training=False, batch_size=64, inter_dim=1, dtype=None, seed=None):

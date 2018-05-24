@@ -1,12 +1,10 @@
-import numpy as np
-
 import matplotlib
+import numpy as np
 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 import collections
-import time
 import cPickle as pickle
 
 _since_beginning = collections.defaultdict(lambda: {})

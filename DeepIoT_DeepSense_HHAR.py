@@ -1,18 +1,12 @@
-import tensorflow as tf
-import numpy as np
-
-import plot
-
-import time
 import math
 import os
-import sys
 
-import plot
+import numpy as np
+import tensorflow as tf
 
 import DeepIoT_dropOut
 import DeepIoT_rnnDrop
-
+import plot
 from har_tfrecord_util import input_pipeline_har
 
 layers = tf.contrib.layers
