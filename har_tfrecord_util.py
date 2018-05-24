@@ -3,23 +3,21 @@ import os
 import tensorflow as tf
 import numpy as np
 
-
 # todo: change the path to your own data folder path
 DATA_FOLDER_PATH = 'sepHARData_a'
 TF_RECORD_PATH = 'sepHARData_a'
 
-
 SEPCTURAL_SAMPLES = 10
-FEATURE_DIM = SEPCTURAL_SAMPLES*6*2
+FEATURE_DIM = SEPCTURAL_SAMPLES * 6 * 2
 WIDE = 20
-OUT_DIM = 6#len(idDict)
+OUT_DIM = 6  # len(idDict)
 BATCH_SIZE = 64
 
 
 def csv_to_example(fname):
     text = np.loadtxt(fname, delimiter=',')
-    features = text[:WIDE*FEATURE_DIM]
-    label = text[WIDE*FEATURE_DIM:]
+    features = text[:WIDE * FEATURE_DIM]
+    label = text[WIDE * FEATURE_DIM:]
 
     example = tf.train.Example(features=tf.train.Features(feature={
         "label": tf.train.Feature(float_list=tf.train.FloatList(value=label)),
@@ -36,7 +34,7 @@ def read_and_decode(tfrec_path):
     features = tf.parse_single_example(serialized_example,
                                        features={
                                            'label': tf.FixedLenFeature([OUT_DIM], tf.float32),
-                                           'example': tf.FixedLenFeature([WIDE*FEATURE_DIM], tf.float32),
+                                           'example': tf.FixedLenFeature([WIDE * FEATURE_DIM], tf.float32),
                                        })
     return features['example'], features['label']
 
