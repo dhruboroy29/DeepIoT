@@ -68,3 +68,6 @@ sepHARData_a/
 
 # .pkl files
 *.pkl
+
+# Batch job output files
+*.out
