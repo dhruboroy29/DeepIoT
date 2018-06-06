@@ -65,3 +65,6 @@ sepHARData_a/
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+
+# .pkl files
+*.pkl
