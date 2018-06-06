@@ -503,7 +503,7 @@ comps_global_step = tf.Variable(0, trainable=False)
 prun_global_step = tf.Variable(0, trainable=False)
 sol_train_global_step = tf.Variable(0, trainable=False)
 
-TF_RECORD_PATH = 'sepHARData_' + select
+TF_RECORD_PATH = '../sepHARData_' + select
 SAVER_DIR = 'deepHHAR_saver'
 
 batch_feature, batch_label = input_pipeline_har(os.path.join(TF_RECORD_PATH, 'train.tfrecord'), BATCH_SIZE)
