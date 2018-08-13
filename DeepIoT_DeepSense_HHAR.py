@@ -605,7 +605,8 @@ with tf.Session() as sess:
         _, lossV, _trainY, _predict = sess.run([discOptimizer, loss, batch_label, predict])
 
         # Train Compressor
-        _, compsLossV, _, lossMeanV, lossStdV = sess.run([compsOptimizer, compsLoss, maintain_averages_op,
+        batchLossV, batchLossMeanV, batchLossVarV, lossV, _, compsLossV, _, lossMeanV, lossStdV =\
+            sess.run([batchLoss, batchLossMean, batchLossVar, loss, compsOptimizer, compsLoss, maintain_averages_op,
                                                           ema.average(lossMean), ema.average(lossStd)])
         _label = np.argmax(_trainY, axis=1)
         _accuracy = np.mean(_label == _predict)
